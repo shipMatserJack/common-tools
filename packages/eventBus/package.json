@@ -1,0 +1,17 @@
+{
+  "name": "@shipmaster/event-bus",
+  "version": "1.0.0",
+  "description": "Standalone EventBus System.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "eventBus",
+    "event-bus"
+  ],
+  "author": "huangjie",
+  "license": "MIT"
+}
