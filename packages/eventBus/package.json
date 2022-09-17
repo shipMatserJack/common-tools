@@ -1,6 +1,6 @@
 {
   "name": "@shipmaster/event-bus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Standalone EventBus System.",
   "type": "module",
   "main": "dist/eventBus.cjs.js",
