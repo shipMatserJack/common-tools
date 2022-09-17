@@ -8,7 +8,8 @@
   "devMain": "src/index.ts",
   "types": "index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "keywords": [
     "eventBus",
