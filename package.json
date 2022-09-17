@@ -2,6 +2,7 @@
   "name": "common-tools",
   "version": "1.0.0",
   "description": "common javaScript tools",
+  "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "node scripts/build.js",
