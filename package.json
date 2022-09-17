@@ -9,7 +9,7 @@
     "test": "jest --runInBand --coverage --bail",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "publish": "changeset publish --registry=https://registry.npmjs.com/",
+    "publish": "changeset publish",
     "release": "node scripts/release.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
