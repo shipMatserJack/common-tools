@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Standalone EventBus System.",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/eventBus.cjs.js",
+  "module": "dist/eventBus.esm-bundler.js",
+  "devMain": "src/index.ts",
   "types": "index.d.ts",
   "files": [
     "dist"
@@ -12,6 +14,13 @@
     "eventBus",
     "event-bus"
   ],
+  "buildOptions": {
+    "name": "eventBus",
+    "formats": [
+      "esm-bundler",
+      "cjs"
+    ]
+  },
   "author": "huangjie",
   "license": "MIT"
 }

@@ -20,13 +20,10 @@ module.exports = {
     '**/__tests__/**/*.(js|ts)?(x)',
     '**/?(*.)(spec).(js|ts)?(x)'
   ],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'node',
   moduleNameMapper: {
     '@/(.*)$': '<rootDir>/src/$1',
   },
-  setupFiles: [
-    '<rootDir>/.jest/setup'
-  ],
   coverageDirectory: '<rootDir>/.coverage-report',
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx,vue}',

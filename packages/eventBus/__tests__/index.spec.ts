@@ -1,7 +1,7 @@
-import EventBus from './index'
+import EventBus from '../src/index'
 
 describe('EventBus 测试.', function () {
-  var greeting2, faxking2
+  var greeting2: number, faxking2: number
 
   var greeting = EventBus.$on('Greeting', param => {
     console.log('Hello, ' + param.name + '!')

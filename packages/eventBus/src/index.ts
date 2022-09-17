@@ -1,7 +1,7 @@
 /**
  * 事件 UID, 自增.
  */
- let uid = 0
+ let uid: number = 0
 
  /**
   * UID Maps, 存储 uid 与事件对应关系.
@@ -14,7 +14,9 @@
   *   ...
   * }
   */
- const uidMaps = {}
+ const uidMaps = {} as {
+  [key: number]: any
+ }
  
  /**
   * 事件池.
@@ -35,7 +37,7 @@
     * @param { string } eventName
     * @param { any } value
     */
-   $emit: function (eventName, ...value) {
+   $emit: function (eventName: string, ...value: any[]) {
      if (typeof eventsPool[eventName] === 'undefined') {
        return
      }
@@ -53,7 +55,7 @@
     * @param { Function } callback 事件函数.
     * @return { number } 事件 UID.
     */
-   $on: function (eventName, callback) {
+   $on: function (eventName: string, callback: (...args: any[]) => void): number {
      if (!eventsPool[eventName]) {
        createNewEventPool(eventName)
      }
@@ -62,7 +64,7 @@
      for (let funcUID in eventsPool[eventName]) {
        const eventFunc = eventsPool[eventName][funcUID]
        if (eventFunc === callback) {
-         return funcUID
+         return Number(funcUID)
        }
      }
  
@@ -77,10 +79,10 @@
     * 销毁事件.
     * 返回 boolean 表示销毁是否成功.
     *
-    * @param {any} uid 事件 UID.
+    * @param {number} uid 事件 UID.
     * @returns {boolean}
     */
-   $destroy (uid) {
+   $destroy (uid: number): boolean {
      const eventName = uidMaps[uid]
  
      if (typeof eventName === 'undefined') {
@@ -112,7 +114,7 @@
   * @param {string} eventName
   * @returns
   */
- function createNewEventPool (eventName) {
+ function createNewEventPool (eventName: string) {
    if (typeof eventsPool[eventName] === 'undefined') {
      eventsPool[eventName] = Object.create(null)
    }
