@@ -1,0 +1,28 @@
+{
+  "name": "@shipmaster/lru",
+  "version": "1.0.1",
+  "description": "Standalone LRU Cache.",
+  "type": "module",
+  "main": "dist/lruCache.cjs.js",
+  "module": "dist/lruCache.esm-bundler.js",
+  "devMain": "src/index.ts",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "lru",
+    "lru-cache",
+    "LRUCache"
+  ],
+  "buildOptions": {
+    "name": "LRUCache",
+    "formats": [
+      "esm-bundler",
+      "cjs"
+    ]
+  },
+  "author": "huangjie",
+  "license": "MIT"
+}

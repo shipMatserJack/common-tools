@@ -156,25 +156,7 @@ function updatePackage(pkgRoot, version) {
   const pkgPath = path.resolve(pkgRoot, 'package.json')
   const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'))
   pkg.version = version
-  updateDeps(pkg, 'dependencies', version)
-  updateDeps(pkg, 'peerDependencies', version)
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
-}
-
-function updateDeps(pkg, depType, version) {
-  const deps = pkg[depType]
-  if (!deps) return
-  Object.keys(deps).forEach(dep => {
-    if (
-      dep === 'vue' ||
-      (dep.startsWith('@vue') && packages.includes(dep.replace(/^@vue\//, '')))
-    ) {
-      console.log(
-        chalk.yellow(`${pkg.name} -> ${depType} -> ${dep}@${version}`)
-      )
-      deps[dep] = version
-    }
-  })
 }
 
 async function publishPackage(pkgName, version, runIfNotDry) {
